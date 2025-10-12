@@ -1,4 +1,3 @@
 # 🌟 Your Name
-
-**University:** Your University
-**Skills:** Python, React
+**University:** Your University  
+**Skills:** Python, React, Git
