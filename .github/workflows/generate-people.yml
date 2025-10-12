@@ -1,0 +1,3 @@
+name: Generate People Page
+'on': {workflow_dispatch: {}}
+jobs: {}
