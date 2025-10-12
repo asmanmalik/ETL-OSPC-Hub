@@ -1,1 +1,0 @@
-# 🌟 Ayesha Khan\n\n![Top Contributor](../assets/badges/ayesha-k.svg)\n**University:** FAST Lahore\n**Skills:** Python, React, GitHub Actions
