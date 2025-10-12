@@ -15,8 +15,8 @@ jobs:
           python-version: '3.x'
       - run: python scripts/generate_badges.py
       - run: |
-          git config user.name "OSPC Bot"
-          git config user.email "bot@etl-online.org"
+          git config user.name "Asma Malik"
+          git config user.email "asma_n_malik@msn.com"
           git add assets/badges/*.svg contributors/*.md || true
           git commit -m "chore(badges): refresh" || echo "no changes"
           git push
