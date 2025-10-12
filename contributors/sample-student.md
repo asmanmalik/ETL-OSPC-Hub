@@ -1,1 +1,0 @@
-# 🌟 Sample Student\n\n![Top Contributor](../assets/badges/sample-student.svg)\n**University:** FAST Lahore\n**Skills:** Python, React
