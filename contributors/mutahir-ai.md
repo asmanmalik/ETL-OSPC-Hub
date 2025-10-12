@@ -1,1 +1,0 @@
-# 🌟 Mutahir Ahmed\n\n![Top Contributor](../assets/badges/mutahir-ai.svg)\n**University:** Comsats Islamabad\n**Skills:** Python, AI/ML, Data Visualization
