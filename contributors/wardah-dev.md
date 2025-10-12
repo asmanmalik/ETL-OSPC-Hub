@@ -1,1 +1,0 @@
-# 🌟 Wardah Tariq\n\n![Top Contributor](../assets/badges/wardah-dev.svg)\n**University:** NUST\n**Skills:** JavaScript, UI/UX, Figma
