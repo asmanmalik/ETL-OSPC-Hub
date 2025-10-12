@@ -1,3 +1,22 @@
 name: Generate Mentors Page
-'on': {workflow_dispatch: {}}
-jobs: {}
+
+on:
+  schedule:
+    - cron: "30 8 * * 1"  # every Monday 8:30 AM UTC
+  workflow_dispatch:
+
+jobs:
+  generate-mentors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/generate_mentors.py
+      - run: |
+          git config user.name "OSPC Bot"
+          git config user.email "bot@etl-online.org"
+          git add data/mentors.json || true
+          git commit -m "chore(mentors): auto-generate" || echo "no changes"
+          git push
