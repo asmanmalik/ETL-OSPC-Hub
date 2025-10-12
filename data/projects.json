@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "id": "spark",
+      "name": "SPARK"
+    },
+    {
+      "id": "resume-builder",
+      "name": "Resume Builder"
+    }
+  ]
+}

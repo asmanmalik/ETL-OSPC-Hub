@@ -1,0 +1,60 @@
+[
+  {
+    "name": "\ud83c\udf1f Your Name",
+    "github": "_template",
+    "university": "Your University",
+    "skills": [
+      "Python",
+      "React"
+    ]
+  },
+  {
+    "name": "\ud83c\udf1f Ahmed Raza",
+    "github": "ahmed-r",
+    "university": "UET Lahore",
+    "skills": [
+      "Node.js",
+      "Docker",
+      "MongoDB"
+    ]
+  },
+  {
+    "name": "\ud83c\udf1f Ayesha Khan",
+    "github": "ayesha-k",
+    "university": "FAST Lahore",
+    "skills": [
+      "Python",
+      "React",
+      "GitHub Actions"
+    ]
+  },
+  {
+    "name": "\ud83c\udf1f Mutahir Ahmed",
+    "github": "mutahir-ai",
+    "university": "Comsats Islamabad",
+    "skills": [
+      "Python",
+      "AI/ML",
+      "Data Visualization"
+    ]
+  },
+  {
+    "name": "\ud83c\udf1f Sample Student",
+    "github": "sample-student",
+    "university": "FAST Lahore",
+    "skills": [
+      "Python",
+      "React"
+    ]
+  },
+  {
+    "name": "\ud83c\udf1f Wardah Tariq",
+    "github": "wardah-dev",
+    "university": "NUST",
+    "skills": [
+      "JavaScript",
+      "UI/UX",
+      "Figma"
+    ]
+  }
+]
