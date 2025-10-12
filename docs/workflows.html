@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow Dashboard — ETL-OSPC Hub</title>
+  <style>
+    :root { --etl-primary:#5A2D82; --etl-accent:#00B3B8; --etl-bg:#0E0E12; --etl-text:#F5F7FA; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; font-family: Inter, system-ui, Segoe UI, Roboto, sans-serif;
+      color: var(--etl-text);
+      background: radial-gradient(1000px 600px at 20% -20%, rgba(90,45,130,0.25), transparent 60%),
+                  radial-gradient(1000px 600px at 120% 20%, rgba(0,179,184,0.25), transparent 60%),
+                  var(--etl-bg);
+      min-height:100vh;
+    }
+    .nav {
+      position:sticky; top:0; z-index:10;
+      display:flex; align-items:center; gap:16px; padding:12px 20px;
+      background: rgba(14,14,18,.85); backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav a { color:#BFEFF1; text-decoration:none; font-weight:600; }
+    .nav a:hover { text-decoration:underline; }
+    .spacer { flex:1; }
+    .btn { padding:8px 12px; border-radius:10px; background:var(--etl-primary); color:#fff; border:1px solid rgba(255,255,255,.15); text-decoration:none; }
+    .hero {
+      padding: 36px 20px 20px; text-align:center;
+      background: linear-gradient(135deg, rgba(90,45,130,.95), rgba(0,179,184,.95));
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25) inset;
+    }
+    .hero h1 { margin:0; font-size: 36px; color:#fff; }
+    .hero p { margin:.4rem 0 0; opacity:.95; }
+    .section { max-width:1100px; margin: 20px auto; padding: 0 20px 40px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px;
+      transform: translateY(16px);
+      opacity: 0;
+      animation: rise .6s ease forwards;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    }
+    .card:nth-child(2) { animation-delay: .08s; }
+    .card:nth-child(3) { animation-delay: .16s; }
+    .card:nth-child(4) { animation-delay: .24s; }
+    .card:nth-child(5) { animation-delay: .32s; }
+    @keyframes rise { to { transform: translateY(0); opacity:1; } }
+    .card h3 { margin: 0 0 8px; display:flex; align-items:center; gap:10px; }
+    .chip { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.1); font-size:12px; }
+    .muted { opacity:.8; font-size: 14px; }
+    .row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .row img.badge { height:20px; }
+    .icons { width:22px; height:22px; vertical-align:-4px; }
+    .footer { opacity:.8; text-align:center; padding:36px 24px; font-size:14px; border-top:1px solid rgba(255,255,255,.08) }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="./index.html">Home</a>
+    <a href="./people.html">People</a>
+    <a href="./mentors.html">Mentors</a>
+    <a href="./hall-of-fame.html">Hall of Fame</a>
+    <a href="./projects.html">Projects</a>
+    <div class="spacer"></div>
+    <a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions" target="_blank">Open in GitHub Actions ↗</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Workflow Dashboard</h1>
+    <p>Live automation status for ETL-OSPC Hub — powered by GitHub Actions.</p>
+  </header>
+
+  <main class="section">
+    <div class="grid">
+
+      <!-- Pages Deploy -->
+      <article class="card">
+        <h3>
+          <svg class="icons" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v13a2 2 0 0 1-2 2H8l-4 4V4z" stroke-width="1.6"/></svg>
+          Deploy GitHub Pages
+          <span class="chip">on push</span>
+        </h3>
+        <p class="muted">Publishes <code>/docs</code> to GitHub Pages.</p>
+        <div class="row">
+          <img class="badge" src="https://img.shields.io/github/actions/workflow/status/asmanmalik/ETL-OSPC-Hub/pages.yml?branch=main&label=deploy%20status" alt="Deploy status">
+          <img class="badge" src="https://img.shields.io/github/last-commit/asmanmalik/ETL-OSPC-Hub/main?label=last%20commit" alt="Last commit">
+        </div>
+        <div class="row"><a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions/workflows/pages.yml" target="_blank">View runs ↗</a></div>
+      </article>
+
+      <!-- People -->
+      <article class="card">
+        <h3>
+          <svg class="icons" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm7 9a7 7 0 0 0-14 0" stroke-width="1.6"/></svg>
+          Generate People Page
+          <span class="chip">weekly</span>
+        </h3>
+        <p class="muted">Builds <code>data/people.json</code> from <code>/contributors</code>.</p>
+        <div class="row">
+          <img class="badge" src="https://img.shields.io/github/actions/workflow/status/asmanmalik/ETL-OSPC-Hub/generate-people.yml?label=workflow" alt="Workflow status">
+          <img class="badge" src="https://img.shields.io/badge/schedule-Mon%2008:00%20UTC-5A2D82" alt="Schedule">
+        </div>
+        <div class="row"><a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions/workflows/generate-people.yml" target="_blank">View runs ↗</a></div>
+      </article>
+
+      <!-- Mentors -->
+      <article class="card">
+        <h3>
+          <svg class="icons" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 7a4 4 0 1 0 8 0 4 4 0 1 0-8 0zm8 8H8a4 4 0 0 0-4 4h16a4 4 0 0 0-4-4z" stroke-width="1.6"/></svg>
+          Generate Mentors Page
+          <span class="chip">weekly</span>
+        </h3>
+        <p class="muted">Builds <code>data/mentors.json</code> from <code>/mentors</code>.</p>
+        <div class="row">
+          <img class="badge" src="https://img.shields.io/github/actions/workflow/status/asmanmalik/ETL-OSPC-Hub/generate-mentors.yml?label=workflow" alt="Workflow status">
+          <img class="badge" src="https://img.shields.io/badge/schedule-Mon%2008:30%20UTC-5A2D82" alt="Schedule">
+        </div>
+        <div class="row"><a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions/workflows/generate-mentors.yml" target="_blank">View runs ↗</a></div>
+      </article>
+
+      <!-- Badges -->
+      <article class="card">
+        <h3>
+          <svg class="icons" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 17l-5.5 3 1.5-6L4 9l6-.5L12 3l2 5.5 6 .5-4 5 1.5 6z" stroke-width="1.6"/></svg>
+          Generate Contributor Badges
+          <span class="chip">weekly</span>
+        </h3>
+        <p class="muted">Creates rank-colored SVG badges and injects into contributor profiles.</p>
+        <div class="row">
+          <img class="badge" src="https://img.shields.io/github/actions/workflow/status/asmanmalik/ETL-OSPC-Hub/generate-badges.yml?label=workflow" alt="Workflow status">
+          <img class="badge" src="https://img.shields.io/badge/schedule-Mon%2007:00%20UTC-5A2D82" alt="Schedule">
+        </div>
+        <div class="row"><a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions/workflows/generate-badges.yml" target="_blank">View runs ↗</a></div>
+      </article>
+
+      <!-- Hall of Fame -->
+      <article class="card">
+        <h3>
+          <svg class="icons" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5L12 2z" stroke-width="1.6"/></svg>
+          Update Hall of Fame
+          <span class="chip">monthly</span>
+        </h3>
+        <p class="muted">Rebuilds <code>docs/hall-of-fame.html</code> from <code>data/leaderboard.csv</code>.</p>
+        <div class="row">
+          <img class="badge" src="https://img.shields.io/github/actions/workflow/status/asmanmalik/ETL-OSPC-Hub/update-hall-of-fame.yml?label=workflow" alt="Workflow status">
+          <img class="badge" src="https://img.shields.io/badge/schedule-1st%20of%20month%2005:00%20UTC-5A2D82" alt="Schedule">
+        </div>
+        <div class="row"><a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub/actions/workflows/update-hall-of-fame.yml" target="_blank">View runs ↗</a></div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">MIT © ETL-Online • Workflow Dashboard</footer>
+</body>
+</html>
