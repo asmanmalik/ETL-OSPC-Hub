@@ -15,8 +15,8 @@ jobs:
           python-version: '3.x'
       - run: python scripts/generate_people.py
       - run: |
-          git config user.name "OSPC Bot"
-          git config user.email "bot@etl-online.org"
+          git config user.name "Asma Malik"
+          git config user.email "asma_n_malik@msn.com"
           git add data/people.json || true
           git commit -m "chore(people): auto-generate" || echo "no changes"
           git push
