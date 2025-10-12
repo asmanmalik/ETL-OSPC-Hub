@@ -1,3 +1,22 @@
 name: Generate Contributor Badges
-'on': {workflow_dispatch: {}}
-jobs: {}
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # every Monday 7 AM UTC
+  workflow_dispatch:
+
+jobs:
+  badges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/generate_badges.py
+      - run: |
+          git config user.name "OSPC Bot"
+          git config user.email "bot@etl-online.org"
+          git add assets/badges/*.svg contributors/*.md || true
+          git commit -m "chore(badges): refresh" || echo "no changes"
+          git push
