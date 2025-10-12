@@ -1,3 +1,23 @@
 name: Update Hall of Fame
-'on': {workflow_dispatch: {}}
-jobs: {}
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 5 AM UTC on the 1st day of each month
+  workflow_dispatch:
+
+jobs:
+  build-hof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Hall of Fame HTML
+        run: |
+          echo '<!doctype html><html><head><meta charset="utf-8"><title>Hall of Fame</title><link rel="stylesheet" href="assets/styles.css"></head><body><section class="section"><h1>🏅 Hall of Fame</h1><div class="grid grid-3">' > docs/hall-of-fame.html
+          tail -n +2 data/leaderboard.csv | while IFS=, read -r rank name github university prs; do echo "<div class='card visible'><h3>${name}</h3><p>${university}<br><b>PRs:</b> ${prs}<br><b>GitHub:</b> @${github}</p></div>" >> docs/hall-of-fame.html; done
+          echo '</div></section><footer class="footer">MIT © ETL-Online • Updated monthly via GitHub Action</footer></body></html>' >> docs/hall-of-fame.html
+      - run: |
+          git config user.name "OSPC Bot"
+          git config user.email "bot@etl-online.org"
+          git add docs/hall-of-fame.html || true
+          git commit -m "chore(hof): monthly refresh" || echo "no changes"
+          git push
