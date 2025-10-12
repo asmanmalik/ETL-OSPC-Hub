@@ -1,1 +1,0 @@
-# 🌟 Ahmed Raza\n\n![Top Contributor](../assets/badges/ahmed-r.svg)\n**University:** UET Lahore\n**Skills:** Node.js, Docker, MongoDB
