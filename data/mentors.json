@@ -1,67 +1,17 @@
 [
   {
-    "name": "\ud83c\udf1f Asma Malik",
-    "github": "asma-malik",
-    "role": "Chief Mentor \u2014 Open Source Strategy",
+    "name": "\ud83c\udf1f Mentor Name",
+    "github": "handle",
+    "role": "Your Role",
     "expertise": [
-      "Agile",
-      "Leadership",
-      "GitHub Ecosystem"
+      "Topic A",
+      "Topic B"
     ],
-    "affiliation": "ETL Online",
+    "affiliation": "Organization",
     "badges": [
-      "\ud83c\udfc5 Community Architect",
-      "\ud83d\ude80 Open Source Evangelist"
+      "\ud83c\udfc5 Mentor Badge"
     ],
-    "bio": "Leads the strategic growth of OSPC with a student-first approach, bridging academia and industry."
-  },
-  {
-    "name": "\ud83c\udf1f Muaz Ahmad",
-    "github": "muaz-ahmad",
-    "role": "Mentor \u2014 DevOps & SRE",
-    "expertise": [
-      "DevOps",
-      "Docker",
-      "Kubernetes"
-    ],
-    "affiliation": "ETL Online",
-    "badges": [
-      "\u2699\ufe0f Cloud Champion 2025",
-      "\ud83c\udfd7\ufe0f Infra Expert"
-    ],
-    "bio": "Helps students learn CI/CD, observability, and resilient infrastructure patterns for production-grade services."
-  },
-  {
-    "name": "\ud83c\udf1f Mutahir Shah",
-    "github": "mutahir-shah",
-    "role": "Technical Mentor \u2014 Data Engineering",
-    "expertise": [
-      "Python",
-      "ETL",
-      "Data Pipelines"
-    ],
-    "affiliation": "ETL Community Labs",
-    "badges": [
-      "\ud83d\udcca Data Mentor 2025",
-      "\ud83e\udde0 Knowledge Coach"
-    ],
-    "bio": "Focuses on high-quality data, open standards, and practical analytics for real-world decision-making."
-  },
-  {
-    "name": "\ud83c\udf1f Dr. Sarah Malik",
-    "github": "sarah-malik",
-    "role": "Lead Mentor \u2014 AI Projects",
-    "expertise": [
-      "AI/ML",
-      "Cloud",
-      "Agile Coaching"
-    ],
-    "affiliation": "ETL Academy",
-    "badges": [
-      "\ud83e\udd47 AI Mentor of the Year 2025",
-      "\ud83d\udcac Top Reviewer"
-    ],
-    "bio": "Guides students to integrate AI in open-source portfolios with a focus on ethical, secure, and scalable practices."
+    "bio": "Short bio."
   },
   {
     "name": "\ud83c\udf1f Wardah Hassan",
