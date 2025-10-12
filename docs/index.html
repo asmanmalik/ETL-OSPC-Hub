@@ -1,11 +1,67 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>ETL-OSPC Hub</title><link rel='stylesheet' href='assets/styles.css'></head><body>  <nav class="nav">
-    <img src="../assets/brand/etl-logo.svg" alt="ETL logo" />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ETL-OSPC Hub — Home</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body { background: #0E0E12; color: #F5F7FA; font-family: Inter, system-ui, sans-serif; margin:0; }
+    .nav { display:flex; gap:16px; align-items:center; padding:12px 20px; background:rgba(14,14,18,.85); position:sticky; top:0; }
+    .nav img { height:28px; }
+    .spacer { flex:1; }
+    .btn { padding:8px 12px; border-radius:10px; background:#5A2D82; color:#fff; text-decoration:none; }
+    a { color:#00B3B8; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .hero { text-align:center; padding:60px 20px; background:linear-gradient(135deg, rgba(90,45,130,.9), rgba(0,179,184,.9)); }
+    .hero h1 { font-size:42px; color:#fff; margin:0; }
+    .hero p { font-size:18px; opacity:.9; }
+    .section { max-width:1100px; margin:40px auto; padding:0 20px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+    .card { background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px; box-shadow:0 8px 20px rgba(0,0,0,.2); }
+    .card h3 { margin-top:0; }
+    .footer { text-align:center; opacity:.7; padding:30px; border-top:1px solid rgba(255,255,255,.1); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <img src="assets/brand/etl-logo.svg" alt="ETL logo" />
     <a href="./index.html">Home</a>
     <a href="./people.html">People</a>
     <a href="./projects.html">Projects</a>
+    <a href="./workflows.html">Workflows</a>
     <a href="./mentors.html">Mentors</a>
     <a href="./hall-of-fame.html">Hall of Fame</a>
     <div class="spacer"></div>
     <a class="btn" href="https://github.com/asmanmalik/ETL-OSPC-Hub">GitHub →</a>
   </nav>
-<section class='section'><h1>ETL-OSPC Hub</h1><p>Welcome.</p><p>Go to <a href='./people.html'>People</a> or <a href='./mentors.html'>Mentors</a>.</p></section><script src='assets/scripts.js'></script></body></html>
+
+  <header class="hero">
+    <h1>Welcome to ETL-OSPC Hub</h1>
+    <p>The open-source portfolio and automation hub for ETL Online’s global community.</p>
+  </header>
+
+  <main class="section">
+    <h2>🔥 Latest Highlights</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🚀 Student Contributions</h3>
+        <p>Discover innovative work by ETL students through open-source projects, collaborative challenges, and community sprints.</p>
+        <a class="btn" href="people.html">Explore People</a>
+      </div>
+      <div class="card">
+        <h3>🏆 Hall of Fame</h3>
+        <p>Celebrate top contributors and mentors recognized for their dedication and excellence.</p>
+        <a class="btn" href="hall-of-fame.html">View Hall of Fame</a>
+      </div>
+      <div class="card">
+        <h3>⚙️ Automation Workflows</h3>
+        <p>View the live status of our automation pipelines that power updates, metrics, and site deployments.</p>
+        <a class="btn" href="workflows.html">Open Workflow Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">MIT © ETL-Online • Powered by GitHub Pages + Actions</footer>
+</body>
+</html>
