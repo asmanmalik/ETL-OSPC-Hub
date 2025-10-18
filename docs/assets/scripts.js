@@ -33,8 +33,8 @@ async function initPeople() {
 		location.pathname.endsWith('/people.html') || location.pathname.endsWith('people.html');
 	if (!onPeoplePage) return;
 
-	const people = (await fetchJSON('../data/people.json')) || [];
-	const projects = (await fetchJSON('../data/projects.json')) || { projects: [] };
+	const people = (await fetchJSON('data/people.json')) || [];
+	const projects = (await fetchJSON('data/projects.json')) || { projects: [] };
 
 	animateCounter('countContributors', people.length);
 	animateCounter('countProjects', (projects.projects || []).length);
