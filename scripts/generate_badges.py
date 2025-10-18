@@ -2,7 +2,7 @@
 import csv, pathlib, html
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "doc/data" / "leaderboard.csv"
-BADGES = ROOT / "assets" / "badges"
+BADGES = ROOT / "doc/assets" / "badges"
 CONTRIB = ROOT / "contributors"
 BADGES.mkdir(parents=True, exist_ok=True)
 def rank_color(rank):
