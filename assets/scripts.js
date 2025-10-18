@@ -31,9 +31,10 @@ function dedupe(arr) {
 async function initPeople() {
 	const onPeoplePage =
 		location.pathname.endsWith('/people.html') || location.pathname.endsWith('people.html');
+		console.log(location.pathname);
 	if (!onPeoplePage) return;
-
-	const people = (await fetchJSON('../data/people.json')) || [];
+console.log('on people page');
+	const people = (await fetchJSON('data/people.json')) || [];
 	const projects = (await fetchJSON('../data/projects.json')) || { projects: [] };
 
 	animateCounter('countContributors', people.length);
