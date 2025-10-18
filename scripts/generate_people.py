@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, re, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-CONTRIB = ROOT / "contributors"; DATA = ROOT / "data"
+CONTRIB = ROOT / "contributors"; DATA = ROOT / "doc/data"
 def parse(md):
     name = re.search(r'^\s*#\s+(.+)$', md, flags=re.M); name = name.group(1).strip() if name else "Unknown"
     u = re.search(r'\*\*University:\*\*\s*([^\n\r]+)', md); uni = u.group(1).strip() if u else ""

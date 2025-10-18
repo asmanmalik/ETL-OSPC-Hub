@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, re, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-MENTORS = ROOT / "mentors"; DATA = ROOT / "data"
+MENTORS = ROOT / "mentors"; DATA = ROOT / "doc/data"
 def parse(md):
     name = re.search(r'^\s*#\s+(.+)$', md, flags=re.M); name = name.group(1).strip() if name else "Unknown"
     role = re.search(r'\*\*Role:\*\*\s*([^\n\r]+)', md); role = role.group(1).strip() if role else ""

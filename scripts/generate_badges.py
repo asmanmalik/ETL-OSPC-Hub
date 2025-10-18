@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import csv, pathlib, html
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DATA = ROOT / "data" / "leaderboard.csv"
+DATA = ROOT / "doc/data" / "leaderboard.csv"
 BADGES = ROOT / "assets" / "badges"
 CONTRIB = ROOT / "contributors"
 BADGES.mkdir(parents=True, exist_ok=True)
