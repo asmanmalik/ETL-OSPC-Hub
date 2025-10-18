@@ -123,7 +123,7 @@ async function initMentors() {
 		location.pathname.endsWith('/mentors.html') || location.pathname.endsWith('mentors.html');
 	if (!onMentorsPage) return;
 
-	const data = (await fetchJSON('../data/mentors.json')) || [];
+	const data = (await fetchJSON('./data/mentors.json')) || [];
 
 	animateCounter('countMentors', data.length);
 	animateCounter(
